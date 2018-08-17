@@ -1,0 +1,99 @@
+/* -----------------------  cell's rest  ------------------------ */
+
+@mixin generateCellRest($breakpoint : null) {
+
+	.cell-rest#{$breakpoint} {
+		@include ap_flex(1);
+		margin: $DEFAULT_CELLS_MARGIN;
+	}
+
+	.cell-rest-no-gutters#{$breakpoint} {
+		@include ap_flex(1);
+		margin: 0;
+	}
+}
+
+/* -----------------------  cells  ------------------------ */
+
+@mixin generateCells($breakpoint : null) {
+
+	@for $iteratorValue from 1 through $NB_CELLS {
+
+		.cell-#{getCellSize($iteratorValue)}#{$breakpoint} {
+
+			@include ap_flex-basis(getGuttersCellWidth($iteratorValue));
+			margin: $DEFAULT_CELLS_MARGIN;
+			max-width: getGuttersCellWidth($iteratorValue);
+		}
+
+		.cell-#{getCellSize($iteratorValue)}-no-gutters#{$breakpoint} {
+			@include ap_flex-basis(getNoGuttersCellWidth($iteratorValue));
+			margin: 0;
+			max-width: getNoGuttersCellWidth($iteratorValue);
+		}
+
+	}
+
+}
+
+/* -----------------------  correct cells  ------------------------ */
+
+@mixin generateCorrectCells($breakpoint : null) {
+
+	.grid-column#{$breakpoint} > [class*="cell-"],
+	.direction-column#{$breakpoint} > [class*="cell-"],
+	.direction-column#{$breakpoint} > [class*="cell-"],
+	.grid-column-reverse#{$breakpoint} > [class*="cell-"],
+	.direction-column-reverse#{$breakpoint} > [class*="cell-"],
+	.direction-column-reverse#{$breakpoint} > [class*="cell-"] {
+		@include ap_flex-basis(auto);
+		max-width: initial;
+	}
+
+}
+
+/* -----------------------  cells push and pull  ------------------------ */
+
+@mixin generateCellPushAndPull($breakpoint : null) {
+
+	/* :::: push :::: */
+	@for $iteratorValue from 1 through ($NB_CELLS + 1) {
+
+		[class*="cell-"].push-#{getCellSize($iteratorValue)}#{$breakpoint} {
+			left: getNoGuttersCellWidth($iteratorValue);
+		}
+
+	}
+
+	/* :::: pull :::: */
+	@for $iteratorValue from 1 through ($NB_CELLS + 1) {
+
+		[class*="cell-"].pull-#{getCellSize($iteratorValue)}#{$breakpoint} {
+			right: getNoGuttersCellWidth($iteratorValue);
+		}
+
+	}
+}
+
+/* -----------------------  cells offset  ------------------------ */
+
+@mixin generateCellOffset($breakpoint : null) {
+
+	@for $iteratorValue from 1 through ($NB_CELLS + 1) {
+
+		[class*="cell-"].offset-#{getCellSize($iteratorValue)}#{$breakpoint} {
+			margin-left: calc(#{getNoGuttersCellWidth($iteratorValue)} + #{$DEFAULT_CELLS_MARGIN});
+		}
+
+	}
+
+	/* offset no gutters */
+
+	@for $iteratorValue from 1 through ($NB_CELLS + 1) {
+
+		[class*="cell-"].offset-#{getCellSize($iteratorValue)}-no-gutters#{$breakpoint} {
+			margin-left: #{getNoGuttersCellWidth($iteratorValue)}
+		}
+
+	}
+}

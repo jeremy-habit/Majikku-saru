@@ -1,0 +1,54 @@
+// todo : add !default as default_cells_margin example
+
+// default font variables
+$DEFAULT_FONT: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$DEFAULT_FONT_SIZE: 15px;
+$DEFAULT_FONT_COLOR: #404852;
+
+// cells margin
+$DEFAULT_CELLS_MARGIN: 15px !default;
+
+$NB_CELLS: 12;
+
+/* Define containers name and containers 'max-width' value */
+$CONTAINERS: (
+	'giant': 2000px,
+	'great': 1850px,
+	'big': 1850px,
+	'medium': 1350px,
+	'': 1150px,
+	'small':850px,
+	'tiny':650px
+);
+
+// cells gutters
+// todo : maybe reanme that variable ... ?
+$GUTTERS_VALUES: (
+	50,
+	30,
+	15,
+	10,
+	5,
+	0
+);
+
+// todo : look what is the difference between it and gutters values ?
+/* list values */
+$LST_VALUES: (
+	0,
+	50,
+	30,
+	15,
+	10,
+	5
+);
+
+/* responsive breakpoints */
+// todo : test if min + max working
+$BREAKPOINTS: (
+	'xl': (max-width: 1600px),
+	'l': (max-width: 1200px),
+	'm': (max-width: 992px),
+	's': (max-width: 768px),
+	'xs': (max-width: 480px)
+);

@@ -1,0 +1,40 @@
+$WRAP_VALUES: (
+	nowrap,
+	wrap,
+	wrap-reverse
+);
+
+$JUSTIFY_CONTENT_VALUES: (
+	'start': flex-start,
+	'end': flex-end,
+	'center' : center,
+	'between' : space-between,
+	'around' : space-around,
+	'evenly': space-evenly
+);
+
+$ALIGN_ITEMS_VALUES: (
+	'start' : flex-start,
+	'end' : flex-end,
+	'center' : center,
+	'stretch' : stretch,
+	'baseline' : baseline
+);
+
+$ALIGN_CONTENT_VALUES: (
+	'start' : flex-start,
+	'end' : flex-end,
+	'center' : center,
+	'stretch' : stretch,
+	'between' : space-between,
+	'around' : space-around
+);
+
+$ALIGN_SELF_VALUES: (
+	'auto' : auto,
+	'start' : flex-start,
+	'end' : flex-end,
+	'center' : center,
+	'baseline' : baseline,
+	'stretch' : stretch
+);

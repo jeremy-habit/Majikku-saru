@@ -1,0 +1,19 @@
+/* return the size of a cell as title. ex : return 12 for cell-12 */
+@function getCellSize($iteratorValue) {
+	@return $NB_CELLS - ($iteratorValue - 1);
+}
+
+/* return the width of a cell without gutters */
+@function getNoGuttersCellWidth($iteratorValue) {
+	@return (getCellSize($iteratorValue) * 100%) / $NB_CELLS;
+}
+
+/* return the sum of left and right margins based on normal cells margin variable */
+@function getSumOfCellSidesMargin() {
+	@return $DEFAULT_CELLS_MARGIN * 2;
+}
+
+/* return the width of a cell with gutters */
+@function getGuttersCellWidth($iteratorValue) {
+	@return calc(#{getNoGuttersCellWidth($iteratorValue)} - #{getSumOfCellSidesMargin()});
+}

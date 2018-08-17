@@ -1,0 +1,68 @@
+/* @@@@@@@@@@@@@@@@@@@@@@ GRID MEDIA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+@each $breakpoint in $BREAKPOINTS {
+
+	$breakpoint: nth($breakpoint, 1);
+	$breakpointSuffix: -#{nth($breakpoint, 1)};
+
+	@include respond-to($breakpoint) {
+
+		@include generateGrid($breakpointSuffix);
+
+		/* CELLS */
+
+		@include generateCellRest($breakpointSuffix);
+
+		@include generateCells($breakpointSuffix);
+
+		@include generateCorrectCells($breakpointSuffix);
+
+		/* :::: push && pull :::: */
+
+		@include generateCellPushAndPull($breakpointSuffix);
+
+		/* :::: offsets :::: */
+
+		@include generateCellOffset($breakpointSuffix);
+
+		/* #########################  start : FLEX WRAP  ######################### */
+
+		@include generateFlexWrap($breakpointSuffix);
+
+		/* #########################  end : FLEX WRAP  ######################### */
+
+		/* #########################  start : FLEX HORIZONTAL  ######################### */
+
+		@include generateJustifyContent($breakpointSuffix);
+
+		/* #########################  end : FLEX HORIZONTAL  ######################### */
+
+		/* #########################  start : FLEX VERTICAL  ######################### */
+
+		@include generateAlignItems($breakpointSuffix);
+
+		/* #########################  end : FLEX VERTICAL  ######################### */
+
+		/* #########################  start : FLEX ALIGN CONTENT  ######################### */
+
+		@include generateAlignContent($breakpointSuffix);
+
+		/* #########################  end : FLEX ALIGN CONTENT  ######################### */
+
+		/* #########################  start : FLEX SELF ALIGN VERTICAL  ######################### */
+
+		@include generateAlignSelf($breakpointSuffix);
+
+		/* #########################  end : FLEX SELF ALIGN VERTICAL  ######################### */
+
+		/* #########################  start : FLEX ORDER  ######################### */
+
+		@include generateFlexOrder($breakpointSuffix);
+
+		/* #########################  end : FLEX ORDER  ######################### */
+
+	}
+
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@ END MEDIA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */

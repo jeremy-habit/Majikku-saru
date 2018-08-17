@@ -1,0 +1,40 @@
+@each $breakpoint in $BREAKPOINTS {
+
+	$breakpoint: nth($breakpoint, 1);
+	$breakpointSuffix: -#{nth($breakpoint, 1)};
+
+	@include respond-to($breakpoint) {
+
+		/* #########################  start : DISPLAY  ######################### */
+
+		@include generateDisplays($breakpointSuffix);
+
+		/* #########################  end : DISPLAY  ######################### */
+
+		/* #########################  start : WIDTH  ######################### */
+
+		@include generateWidth($breakpointSuffix);
+
+		/* #########################  end : WIDTH  ######################### */
+
+		/* #########################  start : HEIGHT  ######################### */
+
+		@include generateHeight($breakpointSuffix);
+
+		/* #########################  end : HEIGHT  ######################### */
+
+		/* #########################  start : FLOATS  ######################### */
+
+		@include generateFloats($breakpointSuffix);
+
+		/* #########################  end : FLOATS  ######################### */
+
+		/* #########################  start : VERTICAL ALIGN  ######################### */
+
+		@include generateVerticalAlign($breakpointSuffix);
+
+		/* #########################  end : VERTICAL ALIGN  ######################### */
+
+	}
+
+}

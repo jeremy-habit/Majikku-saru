@@ -1,0 +1,15 @@
+{
+  "name": "magic-monkey",
+  "version": "1.0.0",
+  "description": "Magic Monkey is a CSS library offering practical classes and a responsive grid based on Flexbox.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://HabitJeremy@bitbucket.org/HabitJeremy/magicmonkeyreworked.git"
+  },
+  "author": "Jérémy Habit <jeremy.habit@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://HabitJeremy@bitbucket.org/HabitJeremy/magicmonkeyreworked.git/issues"
+  },
+  "homepage": "https://HabitJeremy@bitbucket.org/HabitJeremy/magicmonkeyreworked.git#readme"
+}

@@ -1,0 +1,26 @@
+/* -----------------------  grid's classes  ------------------------ */
+
+@mixin generateGrid($breakpoint : null) {
+
+	.grid, .direction-row, .direction-row#{$breakpoint} {
+		@include ap_flex-direction(row);
+	}
+
+	.grid-reverse#{$breakpoint},
+	.direction-row-reverse#{$breakpoint},
+	.direction-row-reverse#{$breakpoint} {
+		@include ap_flex-direction(row-reverse);
+	}
+
+	.grid-column#{$breakpoint},
+	.direction-column#{$breakpoint},
+	.direction-column#{$breakpoint} {
+		@include ap_flex-direction(column);
+	}
+
+	.grid-column-reverse#{$breakpoint},
+	.direction-column-reverse#{$breakpoint},
+	.direction-column-reverse#{$breakpoint} {
+		@include ap_flex-direction(column-reverse);
+	}
+}
