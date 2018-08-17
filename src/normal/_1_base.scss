@@ -8,11 +8,13 @@ img.responsive, video.responsive .editor-content img {
 /* Add the img-fit-contain or img-fit-cover class to <img> or <video> elements. The media will crop itself to fit inside
  the element (and you don't need another container). This feature can replace the background image trick.*/
 
-img.fit-contain {
+img.fit-contain,
+video.fit-contain {
 	object-fit: contain;
 }
 
-img.fit-cover {
+img.fit-cover,
+video.fit-cover {
 	object-fit: cover;
 }
 

@@ -1,35 +1,12 @@
-// ::::: Abstracts :::::
+// ::::: // 1. Configuration and helpers :::::
 @import 'abstracts/variables';
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
-// ::::: Warehouse :::::
-@import "products/default";
-@import "products/base";
-// grid
-@import 'products/grid/flexbox_grid';
-// components
-/*@import 'products/components/tooltip';*/
-@import 'products/components/notifications';
-@import 'products/components/loader';
-// elements
-@import 'products/elements/buttons';
-@import 'products/elements/blockquote';
-@import 'products/elements/form';
-@import 'products/elements/list';
-@import 'products/elements/table';
-// utilities
-@import 'products/utilities/shaded_box';
-@import 'products/utilities/opacity';
-@import 'products/utilities/typo';
-@import 'products/utilities/text_colors';
-@import 'products/utilities/background_colors';
-@import 'products/utilities/borders';
-@import 'products/utilities/transition';
-@import 'products/utilities/margin';
-@import 'products/utilities/radius';
-@import 'products/utilities/position';
-@import 'products/utilities/padding';
-@import 'products/utilities/animation';
-@import 'products/utilities/selection';
-@import 'products/utilities/shape';
-@import 'products/utilities/group';
+// ::::: 2. Vendors :::::
+// ::::: 3. Base stuff :::::
+@import "base/magic_normalizer";
+// ::::: 4. Layout-related sections :::::
+@import 'layout/grid';
+// ::::: 5. Components :::::
+// ::::: 6. Page-specific styles :::::
+// ::::: 7. Themes :::::

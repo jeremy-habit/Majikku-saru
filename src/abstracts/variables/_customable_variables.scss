@@ -1,9 +1,12 @@
 // todo : add !default as default_cells_margin example
 
-// default font variables
-$DEFAULT_FONT: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$DEFAULT_FONT_SIZE: 15px;
-$DEFAULT_FONT_COLOR: #404852;
+// font variables
+$text_font: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$text_font_size: 14px;
+$text_font_color: #404852;
+$title_primary_font: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$title_secondary_font: "Segoe Ui, sans-serif";
+$code_font: "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace;
 
 // cells margin
 $DEFAULT_CELLS_MARGIN: 15px !default;

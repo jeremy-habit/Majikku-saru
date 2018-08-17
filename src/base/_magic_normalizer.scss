@@ -1,0 +1,61 @@
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $text_font;
+	font-size: $text_font_size;
+	color: $text_font_color;
+	margin: 0;
+}
+
+figure {
+	margin: 0;
+}
+
+li {
+	letter-spacing: normal;
+}
+
+p {
+	text-align: justify;
+	line-height: 1.8;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+code, kbd, pre, samp {
+	font-family: $code_font;
+	word-wrap: break-word;
+}
+
+pre {
+	margin: 0;
+}
+
+table {
+	margin: 0;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+table th {
+	text-align: inherit;
+}
+
+table td {
+	vertical-align: initial;
+}
+
+textarea {
+	resize: vertical;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	margin: 0;
+}
