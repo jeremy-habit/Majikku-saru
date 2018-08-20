@@ -7,7 +7,7 @@
 
 	@include respond-to($breakpoint) {
 
-		@include generateGrid($breakpointSuffix);
+		@include generateFlexDirection($breakpointSuffix);
 
 		/* CELLS */
 

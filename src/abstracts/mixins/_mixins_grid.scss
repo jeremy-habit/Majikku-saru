@@ -1,7 +1,8 @@
-/* -----------------------  grid's classes  ------------------------ */
+/* -----------------------  flex-direction  ------------------------ */
 
-@mixin generateGrid($breakpoint : null) {
+@mixin generateFlexDirection($breakpoint : null) {
 
+	.grid,
 	.direction-row#{$breakpoint} {
 		flex-direction: row;
 	}
@@ -19,6 +20,94 @@
 	.grid-column-reverse#{$breakpoint},
 	.direction-column-reverse#{$breakpoint} {
 		flex-direction: column-reverse;
+	}
+}
+
+/* -----------------------  flex-wrap  ------------------------ */
+
+@mixin generateFlexWrap($breakpoint : null) {
+
+	@each $wrap-value in $wrap_values {
+
+		.#{$wrap-value}#{$breakpoint} {
+			flex-wrap: $wrap-value;
+		}
+
+	}
+
+}
+
+/* -----------------------  justify-content  ------------------------ */
+
+@mixin generateJustifyContent($breakpoint : null) {
+
+	@each $justify-value in $justify_content_values {
+
+		.justify-#{nth($justify-value, 1)}#{$breakpoint} {
+			justify-content: nth($justify-value, 2);
+		}
+
+	}
+
+}
+
+/* -----------------------  align-items  ------------------------ */
+
+@mixin generateAlignItems($breakpoint : null) {
+
+	@each $align-items-value in $align_items_values {
+
+		.align-items-#{nth($align-items-value, 1)}#{$breakpoint} {
+			align-items: nth($align-items-value, 2);
+		}
+	}
+
+}
+
+/* -----------------------  align-content  ------------------------ */
+
+@mixin generateAlignContent($breakpoint : null) {
+
+	@each $align-content-value in $align_content_values {
+
+		.align-content-#{nth($align-content-value, 1)}#{$breakpoint} {
+			align-content: nth($align-content-value, 2);
+		}
+
+	}
+
+}
+
+/* -----------------------  align-self  ------------------------ */
+
+@mixin generateAlignSelf($breakpoint : null) {
+
+	@each $align-self-value in $align_self_values {
+
+		.align-self-#{nth($align-self-value, 1)}#{$breakpoint} {
+			align-self: nth($align-self-value, 2);
+		}
+
+	}
+
+}
+
+/* -----------------------  flex-order  ------------------------ */
+
+@mixin generateFlexOrder($breakpoint : null) {
+
+	@for $i from $number_of_cells through 0 {
+		.order-#{$i}#{$breakpoint} {
+			order: $i - 1;
+		}
+	}
+
+	.order-first#{$breakpoint} {
+		order: - 1;
+	}
+
+	.order-last#{$breakpoint} {
+		order: 100;
 	}
 
 }

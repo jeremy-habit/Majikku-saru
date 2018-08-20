@@ -1,13 +1,13 @@
-// ::::: // 1. Configuration and helpers :::::
+// ------------------------  1. Configuration and helpers  ------------------------
 @import 'abstracts/variables';
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
-// ::::: 2. Vendors :::::
-// ::::: 3. Base stuff :::::
+// ------------------------  2. Vendors  ------------------------
+// ------------------------  3. Base stuff  ------------------------
 @import "base/magic_normalizer";
-// ::::: 4. Layout-related sections :::::
-@import 'breakpoints/grid/2_flexbox_grid_media';
+// ------------------------  4. Layout-related sections  ------------------------
+/*@import 'layout/2_flexbox_grid_media';*/
 @import 'layout/grid';
-// ::::: 5. Components :::::
-// ::::: 6. Page-specific styles :::::
-// ::::: 7. Themes :::::
+// ------------------------  5. Components  ------------------------
+// ------------------------  6. Page-specific styles  ------------------------
+// ------------------------  7. Themes  ------------------------

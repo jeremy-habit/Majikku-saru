@@ -1,10 +1,10 @@
-$WRAP_VALUES: (
+$wrap_values: (
 	nowrap,
 	wrap,
 	wrap-reverse
 );
 
-$JUSTIFY_CONTENT_VALUES: (
+$justify_content_values: (
 	'start': flex-start,
 	'end': flex-end,
 	'center' : center,
@@ -13,7 +13,7 @@ $JUSTIFY_CONTENT_VALUES: (
 	'evenly': space-evenly
 );
 
-$ALIGN_ITEMS_VALUES: (
+$align_items_values: (
 	'start' : flex-start,
 	'end' : flex-end,
 	'center' : center,
@@ -21,7 +21,7 @@ $ALIGN_ITEMS_VALUES: (
 	'baseline' : baseline
 );
 
-$ALIGN_CONTENT_VALUES: (
+$align_content_values: (
 	'start' : flex-start,
 	'end' : flex-end,
 	'center' : center,
@@ -30,7 +30,7 @@ $ALIGN_CONTENT_VALUES: (
 	'around' : space-around
 );
 
-$ALIGN_SELF_VALUES: (
+$align_self_values: (
 	'auto' : auto,
 	'start' : flex-start,
 	'end' : flex-end,
