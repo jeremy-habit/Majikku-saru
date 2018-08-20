@@ -2,7 +2,7 @@
 
 @mixin generateGrid($breakpoint : null) {
 
-	.grid, .direction-row#{$breakpoint} {
+	.direction-row#{$breakpoint} {
 		flex-direction: row;
 	}
 

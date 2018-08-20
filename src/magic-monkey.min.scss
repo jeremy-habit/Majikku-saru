@@ -6,6 +6,7 @@
 // ::::: 3. Base stuff :::::
 @import "base/magic_normalizer";
 // ::::: 4. Layout-related sections :::::
+@import 'breakpoints/grid/2_flexbox_grid_media';
 @import 'layout/grid';
 // ::::: 5. Components :::::
 // ::::: 6. Page-specific styles :::::
