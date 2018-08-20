@@ -3,12 +3,12 @@
 @mixin generateCellRest($breakpoint : null) {
 
 	.cell-rest#{$breakpoint} {
-		@include ap_flex(1);
+		flex: 1;
 		margin: $DEFAULT_CELLS_MARGIN;
 	}
 
 	.cell-rest-no-gutters#{$breakpoint} {
-		@include ap_flex(1);
+		flex: 1;
 		margin: 0;
 	}
 }
@@ -21,13 +21,13 @@
 
 		.cell-#{getCellSize($iteratorValue)}#{$breakpoint} {
 
-			@include ap_flex-basis(getGuttersCellWidth($iteratorValue));
+			flex-basis: getGuttersCellWidth($iteratorValue);
 			margin: $DEFAULT_CELLS_MARGIN;
 			max-width: getGuttersCellWidth($iteratorValue);
 		}
 
 		.cell-#{getCellSize($iteratorValue)}-no-gutters#{$breakpoint} {
-			@include ap_flex-basis(getNoGuttersCellWidth($iteratorValue));
+			flex-basis: getNoGuttersCellWidth($iteratorValue);
 			margin: 0;
 			max-width: getNoGuttersCellWidth($iteratorValue);
 		}
@@ -46,7 +46,7 @@
 	.grid-column-reverse#{$breakpoint} > [class*="cell-"],
 	.direction-column-reverse#{$breakpoint} > [class*="cell-"],
 	.direction-column-reverse#{$breakpoint} > [class*="cell-"] {
-		@include ap_flex-basis(auto);
+		flex-basis: auto;
 		max-width: initial;
 	}
 

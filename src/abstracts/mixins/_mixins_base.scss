@@ -23,7 +23,7 @@
 	}
 
 	.flex#{$breakpoint} {
-		@include ap_display-flex()
+		display: flex;
 	}
 
 	.floats-box#{$breakpoint}::after, .floats-box#{$breakpoint}::before {

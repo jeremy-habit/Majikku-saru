@@ -5,7 +5,7 @@
 	@each $wrap-value in $WRAP_VALUES {
 
 		.#{$wrap-value}#{$breakpoint} {
-			@include ap_flex-wrap($wrap-value);
+			flex-wrap: $wrap-value;
 		}
 
 	}
@@ -19,7 +19,7 @@
 	@each $justify-value in $JUSTIFY_CONTENT_VALUES {
 
 		.justify-#{nth($justify-value, 1)}#{$breakpoint} {
-			@include ap_justify-content(nth($justify-value, 2));
+			justify-content: nth($justify-value, 2);
 		}
 
 	}
@@ -33,7 +33,7 @@
 	@each $align-items-value in $ALIGN_ITEMS_VALUES {
 
 		.align-items-#{nth($align-items-value, 1)}#{$breakpoint} {
-			@include ap_align-items(nth($align-items-value, 2));
+			align-items: nth($align-items-value, 2);
 		}
 	}
 
@@ -46,7 +46,7 @@
 	@each $align-content-value in $ALIGN_CONTENT_VALUES {
 
 		.align-content-#{nth($align-content-value, 1)}#{$breakpoint} {
-			@include ap_align-content(nth($align-content-value, 2));
+			align-content: nth($align-content-value, 2);
 		}
 
 	}
@@ -60,7 +60,7 @@
 	@each $align-self-value in $ALIGN_SELF_VALUES {
 
 		.align-self-#{nth($align-self-value, 1)}#{$breakpoint} {
-			@include ap_align-self(nth($align-self-value, 2));
+			align-self: nth($align-self-value, 2);
 		}
 
 	}
@@ -73,16 +73,16 @@
 
 	@for $i from $NB_CELLS through 0 {
 		.order-#{$i}#{$breakpoint} {
-			@include ap_order($i - 1);
+			order: $i - 1;
 		}
 	}
 
 	.order-first#{$breakpoint} {
-		@include ap_order(-1);
+		order: - 1;
 	}
 
 	.order-last#{$breakpoint} {
-		@include ap_order(100);
+		order: 100;
 	}
 
 }

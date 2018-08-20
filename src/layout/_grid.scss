@@ -1,8 +1,8 @@
 /* #########################  start : Grid  ######################### */
 
 [class*="grid"] {
-	@include ap_display-flex();
-	@include ap_flex-wrap(wrap);
+	display: flex;
+	flex-wrap: wrap;
 }
 
 @include generateGrid();
@@ -12,7 +12,7 @@
 /* #########################  start : CELLS  ######################### */
 
 [class*="cell-"] {
-	@include ap_flex-grow(0);
+	flex-grow: 0;
 	position: relative;
 }
 
