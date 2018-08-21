@@ -2,20 +2,26 @@
 
 @mixin generateCellRest($breakpoint : null) {
 
-	@each $cell_gutter in $cell_gutters {
-		.cell-rest#{$breakpoint} {
-			flex: 1;
-			margin: $cell_gutter;
-		}
+	.cell-rest#{$breakpoint} {
+		flex: 1;
+		/* todo : margin par défaut ? !!! */
 	}
 
-	.cell-rest-no-gutters#{$breakpoint} {
-		flex: 1;
+	.cell-rest.no-gutters#{$breakpoint} {
 		margin: 0;
 	}
 }
 
-/* -----------------------  cells  ------------------------ */
+@mixin generateGutters($breakpoint: null) {
+
+	@each $cell_gutter in $cell_gutters {
+		.gutter-#{nth($cell_gutter, 1)}-#{$breakpoint} {
+			margin: nth($cell_gutter, 2);
+		}
+	}
+}
+
+/* -----------------------  cells & gutters  ------------------------ */
 
 @mixin generateCells($breakpoint : null) {
 
@@ -24,9 +30,9 @@
 		@each $cell_gutter in $cell_gutters {
 			.cell-#{getCellSize($iteratorValue)}#{$breakpoint} {
 
-				flex-basis: getGuttersCellWidth($iteratorValue, $cell_gutter);
+				flex-basis: getGuttersCellWidth($iteratorValue, nth($cell_gutter, 2));
 				margin: $cell_gutter;
-				max-width: getGuttersCellWidth($iteratorValue, $cell_gutter);
+				max-width: getGuttersCellWidth($iteratorValue, nth($cell_gutter, 2));
 			}
 		}
 
@@ -85,7 +91,7 @@
 
 		@each $cell_gutter in $cell_gutters {
 			[class*="cell-"].offset-#{getCellSize($iteratorValue)}#{$breakpoint} {
-				margin-left: calc(#{getNoGuttersCellWidth($iteratorValue)} + #{$cell_gutter});
+				margin-left: calc(#{getNoGuttersCellWidth($iteratorValue)} + #{nth($cell_gutter, 2)});
 			}
 		}
 

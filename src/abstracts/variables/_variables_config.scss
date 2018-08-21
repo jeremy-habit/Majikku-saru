@@ -11,7 +11,10 @@ $code_font: "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace
 // ::::: CELLS :::::
 
 $number_of_cells: 12;
-$cell_gutters: (15px, 30px);
+$cell_gutters: (
+	'sd' : 15px,
+	'simple' : 30px
+);
 
 /* responsive breakpoints */
 // todo : test if min + max working

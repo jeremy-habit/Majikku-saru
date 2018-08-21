@@ -14,6 +14,8 @@
 
 @include generateCellRest();
 
+@include generateGutters();
+
 @include generateCells();
 
 @include generateCorrectCells();
