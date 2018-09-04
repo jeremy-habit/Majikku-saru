@@ -17,3 +17,7 @@
 @function getGuttersCellWidth($iteratorValue, $gutterValue) {
 	@return calc(#{getNoGuttersCellWidth($iteratorValue)} - #{getSumOfCellSidesMargin($gutterValue)});
 }
+
+@function getOneSideGutterCellWidth($iteratorValue, $gutterValue) {
+	@return calc(#{getNoGuttersCellWidth($iteratorValue)} - #{$gutterValue});
+}

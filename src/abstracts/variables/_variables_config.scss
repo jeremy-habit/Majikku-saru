@@ -4,17 +4,14 @@
 $text_font: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $text_font_size: 14px;
 $text_font_color: #404852;
-$title_primary_font: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$title_secondary_font: "Segoe Ui, sans-serif";
+$primary_title_font: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$secondary_title_font: "Segoe Ui, sans-serif";
 $code_font: "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace;
 
 // ::::: CELLS :::::
 
 $number_of_cells: 12;
-$cell_gutters: (
-	'sd' : 15px,
-	'simple' : 30px
-);
+$cells_gutter: 15px;
 
 /* responsive breakpoints */
 // todo : test if min + max working

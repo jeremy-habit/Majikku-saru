@@ -4,20 +4,22 @@
 
 	.cell-rest#{$breakpoint} {
 		flex: 1;
-		/* todo : margin par défaut ? !!! */
+		margin-right: $cells_gutter;
+		margin-left: $cells_gutter;
 	}
 
-	.cell-rest.no-gutters#{$breakpoint} {
-		margin: 0;
+	.grid.no-gutters#{$breakpoint} .cell-rest#{$breakpoint},
+	.grid.no-gutter-right#{$breakpoint} .cell-rest#{$breakpoint},
+	.cell-rest#{$breakpoint}.no-gutters#{$breakpoint},
+	.cell-rest#{$breakpoint}.no-gutter-right#{$breakpoint} {
+		margin-right: 0;
 	}
-}
 
-@mixin generateGutters($breakpoint: null) {
-
-	@each $cell_gutter in $cell_gutters {
-		.gutter-#{nth($cell_gutter, 1)}-#{$breakpoint} {
-			margin: nth($cell_gutter, 2);
-		}
+	.grid.no-gutters#{$breakpoint} .cell-rest#{$breakpoint},
+	.grid.no-gutter-left#{$breakpoint} .cell-rest#{$breakpoint},
+	.cell-rest#{$breakpoint}.no-gutters#{$breakpoint},
+	.cell-rest#{$breakpoint}.no-gutter-left#{$breakpoint} {
+		margin-left: 0;
 	}
 }
 
@@ -27,19 +29,39 @@
 
 	@for $iteratorValue from 1 through $number_of_cells {
 
-		@each $cell_gutter in $cell_gutters {
-			.cell-#{getCellSize($iteratorValue)}#{$breakpoint} {
-
-				flex-basis: getGuttersCellWidth($iteratorValue, nth($cell_gutter, 2));
-				margin: $cell_gutter;
-				max-width: getGuttersCellWidth($iteratorValue, nth($cell_gutter, 2));
-			}
+		.cell-#{getCellSize($iteratorValue)}#{$breakpoint} {
+			flex-basis: getGuttersCellWidth($iteratorValue, $cells_gutter);
+			margin-right: $cells_gutter;
+			margin-left: $cells_gutter;
+			max-width: getGuttersCellWidth($iteratorValue, $cells_gutter);
 		}
 
-		.cell-#{getCellSize($iteratorValue)}-no-gutters#{$breakpoint} {
+		.grid.no-gutters#{$breakpoint} .cell-#{getCellSize($iteratorValue)}#{$breakpoint},
+		.cell-#{getCellSize($iteratorValue)}#{$breakpoint}.no-gutters#{$breakpoint} {
 			flex-basis: getNoGuttersCellWidth($iteratorValue);
-			margin: 0;
 			max-width: getNoGuttersCellWidth($iteratorValue);
+		}
+
+		.grid.no-gutter-right#{$breakpoint} .cell-#{getCellSize($iteratorValue)}#{$breakpoint},
+		.grid.no-gutter-left#{$breakpoint} .cell-#{getCellSize($iteratorValue)}#{$breakpoint},
+		.cell-#{getCellSize($iteratorValue)}#{$breakpoint}.no-gutter-right#{$breakpoint},
+		.cell-#{getCellSize($iteratorValue)}#{$breakpoint}.no-gutter-left#{$breakpoint} {
+			flex-basis: getOneSideGutterCellWidth($iteratorValue, $cells_gutter);
+			max-width: getOneSideGutterCellWidth($iteratorValue, $cells_gutter);
+		}
+
+		.grid.no-gutters#{$breakpoint} .cell-#{getCellSize($iteratorValue)}#{$breakpoint},
+		.grid.no-gutter-right#{$breakpoint} .cell-#{getCellSize($iteratorValue)}#{$breakpoint},
+		.cell-#{getCellSize($iteratorValue)}#{$breakpoint}.no-gutters#{$breakpoint},
+		.cell-#{getCellSize($iteratorValue)}#{$breakpoint}.no-gutter-right#{$breakpoint} {
+			margin-right: 0;
+		}
+
+		.grid.no-gutters#{$breakpoint} .cell-#{getCellSize($iteratorValue)}#{$breakpoint},
+		.grid.no-gutter-left#{$breakpoint} .cell-#{getCellSize($iteratorValue)}#{$breakpoint},
+		.cell-#{getCellSize($iteratorValue)}#{$breakpoint}.no-gutters#{$breakpoint},
+		.cell-#{getCellSize($iteratorValue)}#{$breakpoint}.no-gutter-left#{$breakpoint} {
+			margin-left: 0;
 		}
 
 	}
@@ -63,6 +85,8 @@
 /* -----------------------  cells push and pull  ------------------------ */
 
 @mixin generateCellPushAndPull($breakpoint : null) {
+
+	/* todo : maybe push and pull nogutters  ????*/
 
 	/* :::: push :::: */
 	@for $iteratorValue from 1 through ($number_of_cells + 1) {
@@ -89,10 +113,8 @@
 
 	@for $iteratorValue from 1 through ($number_of_cells + 1) {
 
-		@each $cell_gutter in $cell_gutters {
-			[class*="cell-"].offset-#{getCellSize($iteratorValue)}#{$breakpoint} {
-				margin-left: calc(#{getNoGuttersCellWidth($iteratorValue)} + #{nth($cell_gutter, 2)});
-			}
+		[class*="cell-"].offset-#{getCellSize($iteratorValue)}#{$breakpoint} {
+			margin-left: calc(#{getNoGuttersCellWidth($iteratorValue)} + #{$cells_gutter});
 		}
 
 	}
