@@ -2,24 +2,20 @@
 
 @mixin generateCellRest($breakpoint : null) {
 
-	.cell-rest#{$breakpoint} {
+	.cell-rest#{$breakpoint},
+	.cell-rest-no-gutters#{$breakpoint},
+	.cell-rest-no-gutter-right#{$breakpoint},
+	.cell-rest-no-gutter-left#{$breakpoint} {
 		flex: 1;
-		margin-right: $cells_gutter;
+	}
+
+	.cell-rest#{$breakpoint},
+	.cell-rest-no-gutter-right {
 		margin-left: $cells_gutter;
 	}
-
-	.grid.no-gutters#{$breakpoint} .cell-rest#{$breakpoint},
-	.grid.no-gutter-right#{$breakpoint} .cell-rest#{$breakpoint},
-	.cell-rest#{$breakpoint}.no-gutters#{$breakpoint},
-	.cell-rest#{$breakpoint}.no-gutter-right#{$breakpoint} {
-		margin-right: 0;
-	}
-
-	.grid.no-gutters#{$breakpoint} .cell-rest#{$breakpoint},
-	.grid.no-gutter-left#{$breakpoint} .cell-rest#{$breakpoint},
-	.cell-rest#{$breakpoint}.no-gutters#{$breakpoint},
-	.cell-rest#{$breakpoint}.no-gutter-left#{$breakpoint} {
-		margin-left: 0;
+	.cell-rest#{$breakpoint},
+	.cell-rest-no-gutter-left {
+		margin-right: $cells_gutter;
 	}
 }
 
@@ -36,32 +32,33 @@
 			max-width: getGuttersCellWidth($iteratorValue, $cells_gutter);
 		}
 
-		.grid.no-gutters#{$breakpoint} .cell-#{getCellSize($iteratorValue)}#{$breakpoint},
-		.cell-#{getCellSize($iteratorValue)}#{$breakpoint}.no-gutters#{$breakpoint} {
+		.cell-#{getCellSize($iteratorValue)}-no-gutters#{$breakpoint} {
 			flex-basis: getNoGuttersCellWidth($iteratorValue);
 			max-width: getNoGuttersCellWidth($iteratorValue);
 		}
 
-		.grid.no-gutter-right#{$breakpoint} .cell-#{getCellSize($iteratorValue)}#{$breakpoint},
-		.grid.no-gutter-left#{$breakpoint} .cell-#{getCellSize($iteratorValue)}#{$breakpoint},
-		.cell-#{getCellSize($iteratorValue)}#{$breakpoint}.no-gutter-right#{$breakpoint},
-		.cell-#{getCellSize($iteratorValue)}#{$breakpoint}.no-gutter-left#{$breakpoint} {
+		.cell-#{getCellSize($iteratorValue)}-no-gutter-right#{$breakpoint},
+		.cell-#{getCellSize($iteratorValue)}-no-gutter-left#{$breakpoint} {
 			flex-basis: getOneSideGutterCellWidth($iteratorValue, $cells_gutter);
 			max-width: getOneSideGutterCellWidth($iteratorValue, $cells_gutter);
 		}
 
-		.grid.no-gutters#{$breakpoint} .cell-#{getCellSize($iteratorValue)}#{$breakpoint},
-		.grid.no-gutter-right#{$breakpoint} .cell-#{getCellSize($iteratorValue)}#{$breakpoint},
-		.cell-#{getCellSize($iteratorValue)}#{$breakpoint}.no-gutters#{$breakpoint},
-		.cell-#{getCellSize($iteratorValue)}#{$breakpoint}.no-gutter-right#{$breakpoint} {
+		.cell-#{getCellSize($iteratorValue)}-no-gutters#{$breakpoint},
+		.cell-#{getCellSize($iteratorValue)}-no-gutter-right#{$breakpoint} {
 			margin-right: 0;
 		}
 
-		.grid.no-gutters#{$breakpoint} .cell-#{getCellSize($iteratorValue)}#{$breakpoint},
-		.grid.no-gutter-left#{$breakpoint} .cell-#{getCellSize($iteratorValue)}#{$breakpoint},
-		.cell-#{getCellSize($iteratorValue)}#{$breakpoint}.no-gutters#{$breakpoint},
-		.cell-#{getCellSize($iteratorValue)}#{$breakpoint}.no-gutter-left#{$breakpoint} {
+		.cell-#{getCellSize($iteratorValue)}-no-gutters#{$breakpoint},
+		.cell-#{getCellSize($iteratorValue)}-no-gutter-left#{$breakpoint} {
 			margin-left: 0;
+		}
+
+		.cell-#{getCellSize($iteratorValue)}-no-gutter-left#{$breakpoint} {
+			margin-right: $cells_gutter;
+		}
+
+		.cell-#{getCellSize($iteratorValue)}-no-gutter-right#{$breakpoint} {
+			margin-left: $cells_gutter;
 		}
 
 	}
@@ -72,9 +69,9 @@
 
 @mixin generateCorrectCells($breakpoint : null) {
 
-	.grid-column#{$breakpoint} > [class*="cell-"],
+	.row-column#{$breakpoint} > [class*="cell-"],
 	.direction-column#{$breakpoint} > [class*="cell-"],
-	.grid-column-reverse#{$breakpoint} > [class*="cell-"],
+	.row-column-reverse#{$breakpoint} > [class*="cell-"],
 	.direction-column-reverse#{$breakpoint} > [class*="cell-"] {
 		flex-basis: auto;
 		max-width: initial;

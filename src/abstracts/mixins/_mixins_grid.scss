@@ -2,22 +2,22 @@
 
 @mixin generateFlexDirection($breakpoint : null) {
 
-	.grid,
+	.row#{$breakpoint},
 	.direction-row#{$breakpoint} {
 		flex-direction: row;
 	}
 
-	.grid-reverse#{$breakpoint},
+	.row-reverse#{$breakpoint},
 	.direction-row-reverse#{$breakpoint} {
 		flex-direction: row-reverse;
 	}
 
-	.grid-column#{$breakpoint},
+	.row-column#{$breakpoint},
 	.direction-column#{$breakpoint} {
 		flex-direction: column;
 	}
 
-	.grid-column-reverse#{$breakpoint},
+	.row-column-reverse#{$breakpoint},
 	.direction-column-reverse#{$breakpoint} {
 		flex-direction: column-reverse;
 	}

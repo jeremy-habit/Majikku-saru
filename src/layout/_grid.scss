@@ -1,6 +1,6 @@
 /* ------------------------  Grid  ------------------------ */
 
-[class*="grid"] {
+[class*="row"] {
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -19,8 +19,6 @@
 @include generateCorrectCells();
 
 @include generateCellPushAndPull();
-
-/* :::: offsets :::: */
 
 @include generateCellOffset();
 

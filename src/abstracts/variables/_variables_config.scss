@@ -14,11 +14,10 @@ $number_of_cells: 12;
 $cells_gutter: 15px;
 
 /* responsive breakpoints */
-// todo : test if min + max working
 $BREAKPOINTS: (
-	'xl': (max-width: 1600px),
-	'l': (max-width: 1200px),
-	'm': (max-width: 992px),
-	's': (max-width: 768px),
-	'xs': (max-width: 480px)
+	'xs': (min-width: 480px),
+	's': (min-width: 600px),
+	'm': (min-width: 768px),
+	'l': (min-width: 992px),
+	'xl': (min-width: 1200px)
 );

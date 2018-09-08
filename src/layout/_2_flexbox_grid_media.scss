@@ -1,4 +1,4 @@
-/* @@@@@@@@@@@@@@@@@@@@@@ GRID MEDIA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* ------------------------  Grid media ------------------------ */
 
 @each $breakpoint in $BREAKPOINTS {
 
@@ -7,9 +7,11 @@
 
 	@include respond-to($breakpoint) {
 
+		/* ------------------------  direction  ------------------------ */
+
 		@include generateFlexDirection($breakpointSuffix);
 
-		/* CELLS */
+		/* ------------------------  Cells  ------------------------ */
 
 		@include generateCellRest($breakpointSuffix);
 
@@ -17,52 +19,34 @@
 
 		@include generateCorrectCells($breakpointSuffix);
 
-		/* :::: push && pull :::: */
-
 		@include generateCellPushAndPull($breakpointSuffix);
-
-		/* :::: offsets :::: */
 
 		@include generateCellOffset($breakpointSuffix);
 
-		/* #########################  start : FLEX WRAP  ######################### */
+		/* ------------------------  wrap  ------------------------ */
 
 		@include generateFlexWrap($breakpointSuffix);
 
-		/* #########################  end : FLEX WRAP  ######################### */
-
-		/* #########################  start : FLEX HORIZONTAL  ######################### */
+		/* ------------------------  justify content  ------------------------ */
 
 		@include generateJustifyContent($breakpointSuffix);
 
-		/* #########################  end : FLEX HORIZONTAL  ######################### */
-
-		/* #########################  start : FLEX VERTICAL  ######################### */
+		/* ------------------------  align items  ------------------------ */
 
 		@include generateAlignItems($breakpointSuffix);
 
-		/* #########################  end : FLEX VERTICAL  ######################### */
-
-		/* #########################  start : FLEX ALIGN CONTENT  ######################### */
+		/* ------------------------  align content  ------------------------ */
 
 		@include generateAlignContent($breakpointSuffix);
 
-		/* #########################  end : FLEX ALIGN CONTENT  ######################### */
-
-		/* #########################  start : FLEX SELF ALIGN VERTICAL  ######################### */
+		/* ------------------------  align vertical  ------------------------ */
 
 		@include generateAlignSelf($breakpointSuffix);
 
-		/* #########################  end : FLEX SELF ALIGN VERTICAL  ######################### */
-
-		/* #########################  start : FLEX ORDER  ######################### */
+		/* ------------------------  order  ------------------------ */
 
 		@include generateFlexOrder($breakpointSuffix);
-
-		/* #########################  end : FLEX ORDER  ######################### */
 
 	}
 
 }
-
-/* @@@@@@@@@@@@@@@@@@@@@@ END MEDIA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
