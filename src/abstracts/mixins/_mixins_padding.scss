@@ -1,0 +1,94 @@
+/* -----------------------  paddings  ------------------------ */
+
+@mixin generatePadding($breakpoint : null){
+
+	/* ::::: padding ::::: */
+	/* @@@@@@@@@@ ALL  */
+
+	@each $val in $margin_padding_values {
+
+		.padding-#{$val}#{$breakpoint}, .padding-#{$val}-diffuser#{$breakpoint} > *:not([class*="padding"]) {
+			padding: #{$val}px;
+		}
+
+	}
+
+	.padding#{$breakpoint}, .padding-diffuser#{$breakpoint} > *:not([class*="padding"]) {
+		@extend .padding-15#{$breakpoint};
+	}
+
+	/* @@@@@@@@@@ LEFT  */
+
+	@each $val in $margin_padding_values {
+		.padding-#{$val}-left#{$breakpoint}, .padding-#{$val}-left-diffuser#{$breakpoint} > *:not([class*="padding"]) {
+			padding-left: #{$val}px;
+		}
+	}
+
+	.padding-left#{$breakpoint}, .padding-left-diffuser#{$breakpoint} > *:not([class*="padding"]) {
+		@extend .padding-15-left#{$breakpoint};
+	}
+
+	/* @@@@@@@@@@ BOTTOM  */
+
+	@each $val in $margin_padding_values {
+		.padding-#{$val}-bottom#{$breakpoint}, .padding-#{$val}-bottom-diffuser#{$breakpoint} > *:not([class*="padding"]) {
+			padding-bottom: #{$val}px;
+		}
+	}
+
+	.padding-bottom#{$breakpoint}, .padding-bottom-diffuser#{$breakpoint} > *:not([class*="padding"]) {
+		@extend .padding-15-bottom#{$breakpoint};
+	}
+
+	/* @@@@@@@@@@ RIGHT  */
+
+	@each $val in $margin_padding_values {
+		.padding-#{$val}-right#{$breakpoint}, .padding-#{$val}-right-diffuser#{$breakpoint} > *:not([class*="padding"]) {
+			padding-right: #{$val}px;
+		}
+	}
+
+	.padding-right#{$breakpoint}, .padding-right-diffuser#{$breakpoint} > *:not([class*="padding"]) {
+		@extend .padding-15-right#{$breakpoint};
+	}
+
+	/* @@@@@@@@@@ TOP  */
+
+	@each $val in $margin_padding_values {
+		.padding-#{$val}-top#{$breakpoint}, .padding-#{$val}-top-diffuser#{$breakpoint} > *:not([class*="padding"]) {
+			padding-top: #{$val}px;
+		}
+	}
+
+	.padding-top#{$breakpoint}, .padding-top-diffuser#{$breakpoint} > *:not([class*="padding"]) {
+		@extend .padding-15-top#{$breakpoint};
+	}
+
+	/* @@@@@@@@@@ RIGHT/LEFT  */
+
+	@each $val in $margin_padding_values {
+		.padding-#{$val}-right-left#{$breakpoint}, .padding-#{$val}-right-left-diffuser#{$breakpoint} > *:not([class*="padding"]) {
+			padding-right: #{$val}px;
+			padding-left: #{$val}px;
+		}
+	}
+
+	.padding-right-left#{$breakpoint}, .padding-right-left-diffuser#{$breakpoint} > *:not([class*="padding"]) {
+		@extend .padding-15-right-left#{$breakpoint};
+	}
+
+	/* @@@@@@@@@@ TOP/BOTTOM  */
+
+	@each $val in $margin_padding_values {
+		.padding-#{$val}-top-bottom#{$breakpoint}, .padding-#{$val}-top-bottom-diffuser#{$breakpoint} > *:not([class*="padding"]) {
+			padding-top: #{$val}px;
+			padding-bottom: #{$val}px;
+		}
+	}
+
+	.padding-top-bottom#{$breakpoint}, .padding-top-bottom-diffuser#{$breakpoint} > *:not([class*="padding"]) {
+		@extend .padding-15-top-bottom#{$breakpoint};
+	}
+
+}

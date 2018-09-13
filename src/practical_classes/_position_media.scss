@@ -1,0 +1,16 @@
+/* @@@@@@@@@@@@@@@@@@@@@@ POSITION MEDIA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+@each $breakpoint in $BREAKPOINTS {
+
+  $breakpoint: nth($breakpoint, 1);
+  $breakpointSuffix: -#{nth($breakpoint, 1)};
+
+  @include respond-to($breakpoint) {
+
+    @include generatePositions($breakpointSuffix);
+
+  }
+
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@ END MEDIA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */

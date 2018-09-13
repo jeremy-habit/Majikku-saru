@@ -1,0 +1,66 @@
+/* -----------------------  list-unstyled  ------------------------ */
+
+@mixin generateListUnstyled($breakpoint : null) {
+
+	.list-unstyled#{$breakpoint},
+	.list-unstyled#{$breakpoint} > ul,
+	.list-unstyled#{$breakpoint} > ol {
+		padding-left: 0;
+		margin: 0;
+		list-style: none;
+		letter-spacing: -0.3em;
+	}
+
+}
+
+/* -----------------------  list-inline & list-separator  ------------------------ */
+
+@mixin generateListInlineAndSeparator($breakpoint : null) {
+
+	.list-inline#{$breakpoint} > li,
+	.list-inline#{$breakpoint} > ul > li,
+	.list-inline#{$breakpoint} > ol > li,
+	.list-separator#{$breakpoint} > li,
+	.list-separator#{$breakpoint} > ul > li,
+	.list-separator#{$breakpoint} > ol > li {
+		display: inline-block;
+		margin-right: 15px;
+	}
+
+	.list-inline#{$breakpoint} > li:last-of-type,
+	.list-inline#{$breakpoint} > ul > li:last-of-type,
+	.list-inline#{$breakpoint} > ol > li:last-of-type,
+	.list-separator#{$breakpoint} > li:last-of-type,
+	.list-separator#{$breakpoint} > ul > li:last-of-type,
+	.list-separator#{$breakpoint} > ol > li:last-of-type {
+		margin-right: 0;
+	}
+
+	.list-separator#{$breakpoint} > li:nth-child(n+2):before,
+	.list-separator#{$breakpoint} > ul > li:nth-child(n+2):before,
+	.list-separator#{$breakpoint} > ol > li:nth-child(n+2):before {
+		content: "|";
+		margin-right: 15px;
+	}
+
+}
+
+/* -----------------------  list-block  ------------------------ */
+
+@mixin generateListBlock($breakpoint : null) {
+
+	.list-block#{$breakpoint} > li,
+	.list-block#{$breakpoint} > ul > li,
+	.list-block#{$breakpoint} > ol > li {
+		display: block;
+		margin-right: 0;
+	}
+
+	.list-block#{$breakpoint} > li:nth-child(n+2):before,
+	.list-block#{$breakpoint} > ul > li:nth-child(n+2):before,
+	.list-block#{$breakpoint} > ol > li:nth-child(n+2):before {
+		content: "";
+		margin-right: initial;
+	}
+
+}

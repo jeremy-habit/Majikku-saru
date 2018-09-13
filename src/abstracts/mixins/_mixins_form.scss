@@ -1,0 +1,55 @@
+/* -----------------------  layout piled  ------------------------ */
+
+@mixin generatePiledLayout($breakpoint : null) {
+
+	form.form div.layout-chained.layout-piled#{$breakpoint} div.chain-link,
+	form.form div.layout-piled#{$breakpoint} {
+
+		@include ap_display-flex();
+		@include ap_flex-direction(column);
+		@include ap_flex(1);
+		@include ap_flex-basis(100%);
+		@include ap_align-items(stretch);
+		@include ap_flex-wrap(nowrap);
+
+		> input:not(:last-child),
+		> textarea:not(:last-child),
+		> select:not(:last-child) {
+			margin-right: 0;
+		}
+
+		& label {
+			@include ap_flex-basis(initial);
+			margin-bottom: 7px;
+			margin-right: 0;
+		}
+
+		&:not(:first-of-type), > label:not(:first-child) {
+			margin-top: 25px;
+		}
+
+		> input:not(:first-of-type),
+		> select:not(:first-of-type),
+		> textarea:not(:first-of-type) {
+			margin-top: 0;
+		}
+
+	}
+
+	form.form div.layout-chained.layout-piled#{$breakpoint} div.chain-link:not(:last-of-type),
+	form.form div.layout-aligned-choices.layout-piled#{$breakpoint} > label.radio:not(:last-of-type),
+	form.form div.layout-aligned-choices.layout-piled#{$breakpoint} > label[class*="checkbox"]:not(:last-of-type) {
+		margin-right: 0;
+	}
+
+	form.form div.layout-chained.layout-piled#{$breakpoint} div.chain-link {
+		@include ap_flex(0);
+		@include ap_flex-basis(initial);
+	}
+
+	form.form div.layout-aligned-choices.layout-piled#{$breakpoint} > label.radio:not(:last-of-type),
+	form.form div.layout-aligned-choices.layout-piled#{$breakpoint} > label[class*="checkbox"]:not(:last-of-type) {
+		margin-bottom: 0;
+	}
+
+}

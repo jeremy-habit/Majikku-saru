@@ -1,0 +1,29 @@
+/* #########################  start : LIST-UNSTYLED  ######################### */
+
+@include generateListUnstyled();
+
+/* #########################  end : LIST-UNSTYLED  ######################### */
+
+/* #########################  start : LIST-INLINE & SEPARATOR  ######################### */
+
+@include generateListInlineAndSeparator();
+
+/* #########################  end : LIST-INLINE & SEPARATOR  ######################### */
+
+/* #########################  start : LIST-BLOCK  ######################### */
+
+@include generateListBlock();
+
+/* #########################  start : LIST-BLOCK  ######################### */
+
+/* #########################  start : LIST-STYLE  ######################### */
+
+@each $type in $LST_LIST-TYPES {
+	.list-style-#{$type},
+	.list-style-#{$type} > ul,
+	.list-style-#{$type} > ol {
+		list-style-type: #{$type};
+	}
+}
+
+/* #########################  end : LIST-STYLE  ######################### */

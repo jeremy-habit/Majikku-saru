@@ -1,0 +1,146 @@
+/* #########################  start : TABLE  ######################### */
+
+table.table-striped-odd tbody tr:nth-of-type(odd),
+table.table-striped-even tbody tr:nth-of-type(even),
+table[class*="table-"].striped-odd tbody tr:nth-of-type(odd),
+table[class*="table-"].striped-even tbody tr:nth-of-type(even) {
+	background: #f5f5f5;
+}
+
+table.table-hover-highlight tbody tr,
+table[class*="table-"].hover-highlight tbody tr {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+}
+
+table.table-hover-highlight tr:hover,
+table[class*="table-"].hover-highlight tr:hover {
+	@include generateTransition(3, all, 0.3s, ease, $extend: true);
+	opacity: 1;
+}
+
+table.table-hover tr:hover,
+table[class*="table-"].hover tr:hover {
+	@include generateTransition(3, all, 0.3s, ease, $extend: true);
+	background: whitesmoke;
+}
+
+table.table-equal-columns,
+table[class*="table-"].equal-columns {
+	table-layout: fixed;
+}
+
+table.table-equal-columns tr td,
+table.table-equal-columns tr th,
+table[class*="table-"].equal-columns tr td,
+table[class*="table-"].equal-columns tr th {
+	overflow-wrap: break-word;
+}
+
+table.table-bordered-rows tr td:first-of-type,
+table.table-bordered-rows tr th:first-of-type,
+table[class*="table-"].bordered-rows tr td:first-of-type,
+table[class*="table-"].bordered-rows tr th:first-of-type {
+	border-left: 1px solid;
+	border-left-color: #c0c0c0;
+}
+
+table.table-bordered-rows tr td:last-of-type,
+table.table-bordered-rows tr th:last-of-type,
+table[class*="table-"].bordered-rows tr td:last-of-type,
+table[class*="table-"].bordered-rows tr th:last-of-type {
+	border-right: 1px solid;
+	border-right-color: #c0c0c0;
+}
+
+table.table-bordered-rows tr,
+table[class*="table-"].bordered-rows tr {
+	border-top: 1px solid;
+	border-top-color: #c0c0c0;
+}
+
+table.table-bordered-rows tbody tr:last-of-type,
+table[class*="table-"].bordered-rows tbody tr:last-of-type {
+	border-bottom: 1px solid;
+	border-bottom-color: #c0c0c0;
+}
+
+table.table-bordered-columns tr:first-of-type th,
+table.table-bordered-columns tr:first-of-type td,
+table[class*="table-"].bordered-columns tr:first-of-type th,
+table[class*="table-"].bordered-columns tr:first-of-type td {
+	border-top: 1px solid;
+	border-top-color: #c0c0c0;
+}
+
+table.table-bordered-columns td,
+table.table-bordered-columns th,
+table[class*="table-"].bordered-columns td,
+table[class*="table-"].bordered-columns th {
+	border-bottom: none;
+	border-right: 1px solid;
+	border-left: 1px solid;
+	border-right-color: #c0c0c0;
+	border-left-color: #c0c0c0;
+}
+
+table.table-bordered-columns tr:last-of-type td,
+table[class*="table-"].bordered-columns tr:last-of-type td {
+	border-bottom: 1px solid;
+	border-bottom-color: #c0c0c0;
+}
+
+table.table-bordered td,
+table.table-bordered th,
+table[class*="table-"].bordered td,
+table[class*="table-"].bordered th {
+	border: 1px solid;
+	border-right: none;
+	border-bottom: none;
+	border-left-color: #c0c0c0;
+	border-top-color: #c0c0c0;
+}
+
+table.table-bordered td:last-of-type,
+table.table-bordered th:last-of-type,
+table[class*="table-"].bordered td:last-of-type,
+table[class*="table-"].bordered th:last-of-type {
+	border-right: 1px solid;
+	border-right-color: #c0c0c0;
+}
+
+table.table-bordered tr:last-of-type td,
+table[class*="table-"].bordered tr:last-of-type td {
+	border-bottom: 1px solid;
+	border-bottom-color: #c0c0c0;
+}
+
+table.table-template thead tr,
+table[class*="table-"].template thead tr {
+	border-bottom: 2px solid;
+	border-bottom-color: #c0c0c0;
+}
+
+table.table-template tbody tr:not(:first-of-type),
+table[class*="table-"].template tbody tr:not(:first-of-type) {
+	border-top: 1px solid;
+	border-top-color: #c0c0c0;
+}
+
+@include generateTableWidths();
+
+.table-responsive {
+	display: block;
+	overflow-x: auto;
+}
+
+table.table-scroll,
+table[class*="table-"].scroll {
+	display: block;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+
+/* #########################  end : TABLE  ######################### */

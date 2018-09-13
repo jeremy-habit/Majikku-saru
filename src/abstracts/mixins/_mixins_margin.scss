@@ -1,0 +1,121 @@
+/* -----------------------  margins  ------------------------ */
+
+@mixin generateMargins($breakpoint : null) {
+
+	/* all */
+
+	.margin-auto#{$breakpoint}, .margin-auto-diffuser#{$breakpoint} > *:not([ class *= "margin" ]) {
+		margin: auto;
+	}
+
+	@each $val in $margin_padding_values {
+		.margin-#{$val}#{$breakpoint}, .margin-#{$val}-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+			margin: #{$val}px;
+		}
+	}
+
+	.margin#{$breakpoint}, .margin-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+		@extend .margin-15#{$breakpoint};
+	}
+
+	/* @@@@@@@@@@ LEFT  */
+
+	.margin-auto-left#{$breakpoint}, .margin-auto-left-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+		margin-left: auto;
+	}
+
+	@each $val in $margin_padding_values {
+		.margin-#{$val}-left#{$breakpoint}, .margin-#{$val}-left-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+			margin-left: #{$val}px;
+		}
+	}
+
+	.margin-left#{$breakpoint}, .margin-left-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+		@extend .margin-15-left#{$breakpoint};
+	}
+
+	/* @@@@@@@@@@ BOTTOM  */
+
+	.margin-auto-bottom#{$breakpoint}, .margin-auto-bottom-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+		margin-bottom: auto;
+	}
+
+	@each $val in $margin_padding_values {
+		.margin-#{$val}-bottom#{$breakpoint}, .margin-#{$val}-bottom-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+			margin-bottom: #{$val}px;
+		}
+	}
+
+	.margin-bottom#{$breakpoint}, .margin-bottom-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+		@extend .margin-15-bottom#{$breakpoint};
+	}
+
+	/* @@@@@@@@@@ RIGHT  */
+
+	.margin-auto-right#{$breakpoint}, .margin-auto-right-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+		margin-right: auto;
+	}
+
+	@each $val in $margin_padding_values {
+		.margin-#{$val}-right#{$breakpoint}, .margin-#{$val}-right-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+			margin-right: #{$val}px;
+		}
+	}
+
+	.margin-right#{$breakpoint}, .margin-right-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+		@extend .margin-15-right#{$breakpoint};
+	}
+
+	/* @@@@@@@@@@ TOP  */
+
+	.margin-auto-top#{$breakpoint}, .margin-auto-top-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+		margin-top: auto;
+	}
+
+	@each $val in $margin_padding_values {
+		.margin-#{$val}-top#{$breakpoint}, .margin-#{$val}-top-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+			margin-top: #{$val}px;
+		}
+	}
+
+	.margin-top#{$breakpoint}, .margin-top-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+		@extend .margin-15-top#{$breakpoint};
+	}
+
+	/* @@@@@@@@@@ RIGHT/LEFT  */
+
+	.margin-auto-right-left#{$breakpoint}, .margin-auto-right-left-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@each $val in $margin_padding_values {
+		.margin-#{$val}-right-left#{$breakpoint}, .margin-#{$val}-right-left-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+			margin-right: #{$val}px;
+			margin-left: #{$val}px;
+		}
+	}
+
+	.margin-right-left#{$breakpoint}, .margin-right-left-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+		@extend .margin-15-right-left#{$breakpoint};
+	}
+
+	/* @@@@@@@@@@ TOP/BOTTOM  */
+
+	.margin-auto-top-bottom#{$breakpoint}, .margin-auto-top-bottom-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+	@each $val in $margin_padding_values {
+		.margin-#{$val}-top-bottom#{$breakpoint}, .margin-#{$val}-top-bottom-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+			margin-top: #{$val}px;
+			margin-bottom: #{$val}px;
+		}
+	}
+
+	.margin-top-bottom#{$breakpoint}, .margin-top-bottom-diffuser#{$breakpoint} > *:not([class*="margin"]) {
+		@extend .margin-15-top-bottom#{$breakpoint};
+	}
+
+}

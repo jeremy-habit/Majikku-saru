@@ -1,0 +1,35 @@
+/* -----------------------  displays  ------------------------ */
+
+@mixin generateTableWidths($breakpoint: null) {
+
+	table.table-airy#{$breakpoint} td,
+	table.table-airy#{$breakpoint} th,
+	table[class*="table-"].airy#{$breakpoint} td,
+	table[class*="table-"].airy#{$breakpoint} th {
+		padding: 10px;
+	}
+
+	@if ($breakpoint == null) {
+		table.table-template td,
+		table.table-template th,
+		table[class*="table-"].template td,
+		table[class*="table-"].template th {
+			padding: 10px;
+		}
+	}
+
+	table.table-large#{$breakpoint} td,
+	table.table-large#{$breakpoint} th,
+	table.large#{$breakpoint} td,
+	table.large#{$breakpoint} th {
+		padding: 20px
+	}
+
+	table.table-giant#{$breakpoint} td,
+	table.table-giant#{$breakpoint} th,
+	table[class*="table-"].giant#{$breakpoint} td,
+	table[class*="table-"].giant#{$breakpoint} th {
+		padding: 30px
+	}
+
+}

@@ -1,0 +1,33 @@
+/* @@@@@@@@@@@@@@@@@@@@@@ LIST MEDIA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+@each $breakpoint in $BREAKPOINTS {
+
+	$breakpoint: nth($breakpoint, 1);
+	$breakpointSuffix: -#{nth($breakpoint, 1)};
+
+	@include respond-to($breakpoint) {
+
+		/* #########################  start : LIST-UNSTYLED  ######################### */
+
+		@include generateListUnstyled($breakpointSuffix);
+
+		/* #########################  end : LIST-UNSTYLED  ######################### */
+
+		/* #########################  start : LIST-INLINE & SEPARATOR  ######################### */
+
+		@include generateListInlineAndSeparator($breakpointSuffix);
+
+		/* #########################  end : LIST-INLINE & SEPARATOR  ######################### */
+
+		/* #########################  start : LIST-BLOCK  ######################### */
+
+		@include generateListBlock($breakpointSuffix);
+
+		/* #########################  start : LIST-BLOCK  ######################### */
+
+	}
+
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@ END MEDIA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+

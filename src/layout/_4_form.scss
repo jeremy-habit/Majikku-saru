@@ -1,0 +1,257 @@
+/* #########################  start : FORM  ######################### */
+/* todo : variable for 25px as example + reformat (remove propertis duplication) */
+/* todo : layout-aligned-choices in layout-chained > remove flex-abssis 100% ? humm ... see the full example in doc */
+
+form.form {
+	@include ap_display-flex();
+	@include ap_flex-wrap();
+}
+
+form.form input, form.form select, form.form textarea, form.form button {
+	padding: 7px;
+	font-size: inherit;
+	font-family: inherit;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	outline-color: silver;
+}
+
+/* todo : only for inputs ? hummm ... else maj doc  */
+
+form.form-template input:not([type="submit"]):not([type="reset"]),
+form.form.template input:not([type="submit"]):not([type="reset"]),
+form.form.template select,
+form.form-template select,
+form.form-template textarea,
+form.form.template textarea {
+	border: none;
+	border-bottom: 1px solid silver;
+	outline: none;
+}
+
+form.form div[class*="layout-"] {
+	max-width: 100%;
+}
+
+form.form div[class*="layout-"],
+form.form div.layout-chained div.chain-link {
+	@include ap_transition(all, 0.3s);
+}
+
+form.form div[class*="layout-"]:not(:first-child) {
+	margin-top: 25px;
+}
+
+/* layout aligned */
+
+form.form div.layout-aligned, form.form div.layout-aligned-choices {
+	@include ap_flex-wrap(wrap);
+	@include ap_display-flex();
+	@include ap_flex-direction(row);
+	@include ap_flex(1);
+	@include ap_flex-basis(100%);
+	@include ap_align-items(center);
+}
+
+form.form div.layout-aligned label, form.form div.layout-aligned-choices .choices-label {
+	@include ap_flex-basis(calc(25% - 7px))
+}
+
+form.form div.layout-aligned input:not([type="radio"]):not([type="checkbox"]),
+form.form div.layout-aligned select,
+form.form div.layout-aligned textarea {
+	@include ap_flex-basis(75%)
+}
+
+form.form div.layout-aligned input:not(:first-of-type),
+form.form div.layout-aligned select:not(:first-of-type),
+form.form div.layout-aligned textarea:not(:first-of-type),
+form.form div.layout-aligned label:not(:first-of-type) {
+	margin-top: 25px;
+}
+
+form.form div.layout-aligned > label {
+	margin-right: 7px;
+}
+
+/* layout chained */
+
+form.form div.layout-chained {
+	@include ap_display-flex();
+	@include ap_flex-basis(100%);
+	@include ap_align-items(center);
+	@include ap_flex-grow(1);
+}
+
+form.form div.layout-chained div.chain-link {
+	@include ap_display-flex();
+	@include ap_flex-wrap();
+	@include ap_flex-grow(1);
+	@include ap_flex-basis(100%);
+	@include ap_align-items(center);
+}
+
+form.form div.layout-chained div.chain-link > input:not([type="radio"]):not([type="checkbox"]),
+form.form div.layout-chained div.chain-link > select,
+form.form div.layout-chained div.chain-link > textarea {
+	@include ap_flex-grow(2);
+}
+
+form.form div.layout-chained div.chain-link > label {
+	margin-right: 7px;
+}
+
+form div.layout-chained div.chain-link {
+	margin-top: 0;
+}
+
+form div.layout-chained div.chain-link:not(:last-of-type),
+form.form div.layout-aligned-choices > label.radio:not(:last-of-type),
+form.form div.layout-aligned-choices > label[class*="checkbox"]:not(:last-of-type) {
+	margin-right: 25px;
+}
+
+/* layout piled */
+
+@include generatePiledLayout();
+
+form.form div.layout-actions {
+	@include ap_flex-basis(100%);
+	text-align: center;
+}
+
+label.required::after,
+form.form-required label::after,
+form.form.required label::after {
+	content: "\002A";
+	margin-left: 5px;
+	color: #e74c3c;
+}
+
+/* common checkboxes:radio properties */
+
+label[class*="checkbox"],
+label.radio {
+	display: inline-block;
+}
+
+/* Hide default HTML checkbox */
+label[class*="checkbox"] input[type="checkbox"],
+label.radio input[type="radio"],
+label.radio span.checkmark:after,
+label.checkbox span.checkmark:after {
+	display: none;
+}
+
+label.checkbox span.checkmark:after,
+label.checkbox-switch [class*="slider-"]:before,
+label.radio span.checkmark:after {
+	content: "";
+	position: absolute;
+}
+
+label.checkbox-switch [class*="slider-"]:before,
+label.radio span.checkmark:after {
+	background-color: $CHECKBOX_RADIO_SECONDARY_COLOR;
+}
+
+label.checkbox-switch [class*="slider-"], label.checkbox span.checkmark, label.radio span.checkmark {
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	background-color: $CHECKBOX_RADIO_BG_DEFAULT;
+}
+
+label.checkbox-switch input[type="checkbox"]:checked + [class*="slider-"],
+label.checkbox input:checked ~ .checkmark,
+label.radio input[type="radio"]:checked ~ .checkmark {
+	background-color: $CHECKBOX_RADIO_PRIMARY_COLOR;
+}
+
+/* Show the checkmark when checked */
+label.checkbox input[type="checkbox"]:checked ~ .checkmark:after,
+label.radio input[type="radio"]:checked ~ .checkmark:after {
+	display: block;
+}
+
+/* Create a custom checkbox */
+label.checkbox span.checkmark, label.radio span.checkmark {
+	height: $CHECKBOX_RADIO_SIZE;
+	width: $CHECKBOX_RADIO_SIZE;
+}
+
+label.radio span.checkmark,
+label.checkbox span.checkmark,
+label.checkbox-switch [class*="slider-"] {
+	position: relative;
+	vertical-align: middle;
+	right: 0;
+	bottom: 0;
+	@include ap_transition($duration: .4s);
+	display: inline-block;
+}
+
+/* form switch checkboxes */
+
+/* The[class*="slider-"] */
+label.checkbox-switch [class*="slider-"] {
+	width: 40px;
+	height: $CHECKBOX_RADIO_SIZE;
+}
+
+label.checkbox-switch [class*="slider-"]:before {
+	height: 14px;
+	width: 14px;
+	left: 3px;
+	bottom: 3px;
+	@include ap_transition($duration: .4s);
+}
+
+label.checkbox-switch input[type="checkbox"]:focus + [class*="slider-"] {
+	box-shadow: 0 0 1px $CHECKBOX_RADIO_PRIMARY_COLOR;
+}
+
+label.checkbox-switch input[type="checkbox"]:checked + [class*="slider-"]:before {
+	@include ap_transform-translateX($CHECKBOX_RADIO_SIZE);
+}
+
+label.checkbox-switch .slider-circle {
+	border-radius: 17px;
+}
+
+label.checkbox-switch .slider-circle:before {
+	border-radius: 50%;
+}
+
+/* Customize the label */
+label.checkbox, label.radio {
+	min-width: $CHECKBOX_RADIO_SIZE;
+	min-height: $CHECKBOX_RADIO_SIZE;
+	position: relative;
+}
+
+/* custom checkboxes */
+
+/* Style the checkmark/indicator */
+label.checkbox span.checkmark:after {
+	left: 6.5px;
+	top: 2.5px;
+	width: 7px;
+	height: 13px;
+	border: solid $CHECKBOX_RADIO_SECONDARY_COLOR;
+	border-width: 0 3px 3px 0;
+	@include ap_transform-rotate(45deg);
+}
+
+/* #########################  end : FORM  ######################### */
+
+label.radio span.checkmark, label.radio span.checkmark:after {
+	@include ap_border-radius(50%);
+}
+
+label.radio span.checkmark:after {
+	top: 6px;
+	left: 6px;
+	width: 8px;
+	height: 8px;
+}

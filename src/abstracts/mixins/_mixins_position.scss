@@ -1,0 +1,178 @@
+/* -----------------------  positions  ------------------------ */
+
+@mixin generatePositions($breakpoint : null) {
+
+	.sticky#{$breakpoint} {
+		position: -webkit-sticky;
+		position: sticky;
+		top: 0;
+		z-index: 1001;
+	}
+
+	.fixed#{$breakpoint} {
+		position: fixed;
+	}
+
+	.absolute#{$breakpoint} {
+		position: absolute;
+	}
+
+	.overlay#{$breakpoint} {
+		position: relative;
+	}
+
+	/* :::: FIXED :::: */
+
+	/* :::: row column spread :::: */
+
+	@each $position in $position_values {
+
+		.#{$position}-row-top#{$breakpoint} {
+			position: #{$position};
+			left: 0;
+			top: 0;
+			bottom: initial;
+			right: 0;
+		}
+
+		.#{$position}-row-bottom#{$breakpoint} {
+			position: #{$position};
+			left: 0;
+			bottom: 0;
+			top: initial;
+			right: 0;
+		}
+
+		.#{$position}-column-left#{$breakpoint} {
+			position: #{$position};
+			left: 0;
+			top: 0;
+			right: initial;
+			bottom: 0;
+		}
+
+		.#{$position}-column-right#{$breakpoint} {
+			position: #{$position};
+			right: 0;
+			top: 0;
+			left: initial;
+			bottom: 0;
+		}
+
+		.#{$position}-row-middle#{$breakpoint} {
+			position: #{$position};
+			left: 0;
+			right: 0;
+			top: 50%;
+			bottom: initial;
+			transform: translate(0, -50%);
+		}
+
+		.#{$position}-column-middle#{$breakpoint} {
+			position: #{$position};
+			left: 50%;
+			right: initial;
+			top: 0;
+			bottom: 0;
+			transform: translate(-50%, 0);
+		}
+
+		.#{$position}-spread#{$breakpoint} {
+			position: #{$position};
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			transform: translate(0,0);
+		}
+
+		/* :::: 9 places :::: */
+
+		.#{$position}-top-left#{$breakpoint} {
+			position: #{$position};
+			left: 0;
+			top: 0;
+			right: initial;
+			bottom: initial;
+		}
+
+		.#{$position}-left#{$breakpoint} {
+			position: #{$position};
+			left: 0;
+			top: 50%;
+			right: initial;
+			bottom: initial;
+			transform: translate(0, -50%);
+		}
+
+		.#{$position}-bottom-left#{$breakpoint} {
+			position: #{$position};
+			left: 0;
+			bottom: 0;
+			right: initial;
+			top: initial;
+		}
+
+		.#{$position}-top#{$breakpoint} {
+			position: #{$position};
+			left: 50%;
+			right: initial;
+			top: 0;
+			bottom: initial;
+			transform: translate(-50%, 0);
+		}
+
+		.#{$position}-middle#{$breakpoint} {
+			position: #{$position};
+			left: 50%;
+			right: initial;
+			top: 50%;
+			bottom: initial;
+			transform: translate(-50%, -50%);
+
+		}
+
+		.#{$position}-bottom#{$breakpoint} {
+			position: #{$position};
+			left: 50%;
+			right: initial;
+			bottom: 0;
+			top: initial;
+			transform: translate(-50%, 0);
+		}
+
+		.#{$position}-top-right#{$breakpoint} {
+			position: #{$position};
+			right: 0;
+			left: initial;
+			top: 0;
+			bottom: initial;
+		}
+
+		.#{$position}-right#{$breakpoint} {
+			position: #{$position};
+			right: 0;
+			left: initial;
+			top: 50%;
+			bottom: initial;
+			transform: translate(0, -50%);
+		}
+
+		.#{$position}-bottom-right#{$breakpoint} {
+			position: #{$position};
+			right: 0;
+			left: initial;
+			bottom: 0;
+			top: initial;
+		}
+	}
+
+	.put-foreground#{$breakpoint} {
+		z-index: 1001;
+	}
+
+	.put-background#{$breakpoint} {
+		z-index: 999;
+	}
+
+}

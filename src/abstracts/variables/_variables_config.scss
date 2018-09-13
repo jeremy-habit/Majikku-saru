@@ -9,11 +9,20 @@ $secondary_title_font: "Segoe Ui, sans-serif";
 $code_font: "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace;
 
 // ::::: CELLS :::::
-
 $number_of_cells: 12;
 $cells_gutter: 15px;
 
-/* responsive breakpoints */
+// ::::: MARGIN & PADDING VALUES :::::
+$margin_padding_values: (
+	0,
+	50,
+	30,
+	15,
+	10,
+	5
+);
+
+// ::::: RESPONSIVE BREAKPOINTS  :::::
 $BREAKPOINTS: (
 	'xs': (min-width: 480px),
 	's': (min-width: 600px),

@@ -1,0 +1,10 @@
+/* #########################  start : POSTION  ######################### */
+
+[class*="fixed"], [class*="absolute"] {
+	z-index: 1000;
+}
+
+
+@include generatePositions();
+
+/* #########################  end : POSTION  ######################### */

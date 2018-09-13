@@ -7,7 +7,14 @@
 @import "base/magic_normalizer";
 // ------------------------  4. Layout-related sections  ------------------------
 @import 'layout/grid';
-@import 'layout/2_flexbox_grid_media';
+@import 'layout/grid_media';
 // ------------------------  5. Components  ------------------------
 // ------------------------  6. Page-specific styles  ------------------------
 // ------------------------  7. Themes  ------------------------
+// ------------------------  8. Practical classes  ------------------------
+@import 'practical_classes/position';
+@import 'practical_classes/position_media';
+@import 'practical_classes/margin';
+@import 'practical_classes/margin_media';
+@import 'practical_classes/padding';
+@import 'practical_classes/padding_media';
