@@ -5,12 +5,12 @@
 	form.form div.layout-chained.layout-piled#{$breakpoint} div.chain-link,
 	form.form div.layout-piled#{$breakpoint} {
 
-		@include ap_display-flex();
-		@include ap_flex-direction(column);
-		@include ap_flex(1);
-		@include ap_flex-basis(100%);
-		@include ap_align-items(stretch);
-		@include ap_flex-wrap(nowrap);
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		flex-basis: 100%;
+		align-items: stretch;
+		flex-wrap: nowrap;
 
 		> input:not(:last-child),
 		> textarea:not(:last-child),
@@ -19,7 +19,7 @@
 		}
 
 		& label {
-			@include ap_flex-basis(initial);
+			flex-basis: initial;
 			margin-bottom: 7px;
 			margin-right: 0;
 		}
@@ -43,8 +43,8 @@
 	}
 
 	form.form div.layout-chained.layout-piled#{$breakpoint} div.chain-link {
-		@include ap_flex(0);
-		@include ap_flex-basis(initial);
+		flex: 0;
+		flex-basis: initial;
 	}
 
 	form.form div.layout-aligned-choices.layout-piled#{$breakpoint} > label.radio:not(:last-of-type),

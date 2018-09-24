@@ -3,8 +3,8 @@
 /* todo : layout-aligned-choices in layout-chained > remove flex-abssis 100% ? humm ... see the full example in doc */
 
 form.form {
-	@include ap_display-flex();
-	@include ap_flex-wrap();
+	display: flex;
+	flex-wrap: wrap;
 }
 
 form.form input, form.form select, form.form textarea, form.form button {
@@ -35,7 +35,7 @@ form.form div[class*="layout-"] {
 
 form.form div[class*="layout-"],
 form.form div.layout-chained div.chain-link {
-	@include ap_transition(all, 0.3s);
+	transition: all 0.3s;
 }
 
 form.form div[class*="layout-"]:not(:first-child) {
@@ -45,22 +45,22 @@ form.form div[class*="layout-"]:not(:first-child) {
 /* layout aligned */
 
 form.form div.layout-aligned, form.form div.layout-aligned-choices {
-	@include ap_flex-wrap(wrap);
-	@include ap_display-flex();
-	@include ap_flex-direction(row);
-	@include ap_flex(1);
-	@include ap_flex-basis(100%);
-	@include ap_align-items(center);
+	flex-wrap: wrap;
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	flex-basis: 100%;
+	align-items: center;
 }
 
 form.form div.layout-aligned label, form.form div.layout-aligned-choices .choices-label {
-	@include ap_flex-basis(calc(25% - 7px))
+	flex-basis: calc(25% - 7px);
 }
 
 form.form div.layout-aligned input:not([type="radio"]):not([type="checkbox"]),
 form.form div.layout-aligned select,
 form.form div.layout-aligned textarea {
-	@include ap_flex-basis(75%)
+	flex-basis: 75%;
 }
 
 form.form div.layout-aligned input:not(:first-of-type),
@@ -77,24 +77,24 @@ form.form div.layout-aligned > label {
 /* layout chained */
 
 form.form div.layout-chained {
-	@include ap_display-flex();
-	@include ap_flex-basis(100%);
-	@include ap_align-items(center);
-	@include ap_flex-grow(1);
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+	flex-grow: 1;
 }
 
 form.form div.layout-chained div.chain-link {
-	@include ap_display-flex();
-	@include ap_flex-wrap();
-	@include ap_flex-grow(1);
-	@include ap_flex-basis(100%);
-	@include ap_align-items(center);
+	display: flex;
+	flex-wrap: wrap;
+	flex-grow: 1;
+	flex-basis: 100%;
+	align-items: center;
 }
 
 form.form div.layout-chained div.chain-link > input:not([type="radio"]):not([type="checkbox"]),
 form.form div.layout-chained div.chain-link > select,
 form.form div.layout-chained div.chain-link > textarea {
-	@include ap_flex-grow(2);
+	flex-grow: 2;
 }
 
 form.form div.layout-chained div.chain-link > label {
@@ -116,7 +116,7 @@ form.form div.layout-aligned-choices > label[class*="checkbox"]:not(:last-of-typ
 @include generatePiledLayout();
 
 form.form div.layout-actions {
-	@include ap_flex-basis(100%);
+	flex-basis: 100%;
 	text-align: center;
 }
 
@@ -187,7 +187,7 @@ label.checkbox-switch [class*="slider-"] {
 	vertical-align: middle;
 	right: 0;
 	bottom: 0;
-	@include ap_transition($duration: .4s);
+	transition: .4s;
 	display: inline-block;
 }
 
@@ -204,7 +204,7 @@ label.checkbox-switch [class*="slider-"]:before {
 	width: 14px;
 	left: 3px;
 	bottom: 3px;
-	@include ap_transition($duration: .4s);
+	transition: .4s;
 }
 
 label.checkbox-switch input[type="checkbox"]:focus + [class*="slider-"] {
@@ -212,7 +212,7 @@ label.checkbox-switch input[type="checkbox"]:focus + [class*="slider-"] {
 }
 
 label.checkbox-switch input[type="checkbox"]:checked + [class*="slider-"]:before {
-	@include ap_transform-translateX($CHECKBOX_RADIO_SIZE);
+	transform: translateX($CHECKBOX_RADIO_SIZE);
 }
 
 label.checkbox-switch .slider-circle {
@@ -240,13 +240,13 @@ label.checkbox span.checkmark:after {
 	height: 13px;
 	border: solid $CHECKBOX_RADIO_SECONDARY_COLOR;
 	border-width: 0 3px 3px 0;
-	@include ap_transform-rotate(45deg);
+	transform: rotate(45deg);
 }
 
 /* #########################  end : FORM  ######################### */
 
 label.radio span.checkmark, label.radio span.checkmark:after {
-	@include ap_border-radius(50%);
+	border-radius: 50%;
 }
 
 label.radio span.checkmark:after {

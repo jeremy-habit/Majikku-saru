@@ -17,13 +17,13 @@ table[class*="table-"].hover-highlight tbody tr {
 
 table.table-hover-highlight tr:hover,
 table[class*="table-"].hover-highlight tr:hover {
-	@include generateTransition(3, all, 0.3s, ease, $extend: true);
+	transition: all 0.3s ease;
 	opacity: 1;
 }
 
 table.table-hover tr:hover,
 table[class*="table-"].hover tr:hover {
-	@include generateTransition(3, all, 0.3s, ease, $extend: true);
+	transition: all 0.3s ease;
 	background: whitesmoke;
 }
 
