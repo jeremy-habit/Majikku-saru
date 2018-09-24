@@ -1,15 +1,16 @@
 {
-  "name": "magic-monkey",
+  "name": "monkey-zero",
   "version": "1.0.0",
-  "description": "Magic Monkey is a CSS library offering practical classes and a responsive grid based on Flexbox.",
+  "description": "Monkey-Zero is a CSS library offering practical classes and a responsive grid based on Flexbox.",
+  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://HabitJeremy@bitbucket.org/HabitJeremy/magicmonkeyreworked.git"
+    "url": "git+https://HabitJeremy@bitbucket.org/HabitJeremy/monkey-zero.git"
   },
   "author": "Jérémy Habit <jeremy.habit@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://HabitJeremy@bitbucket.org/HabitJeremy/magicmonkeyreworked.git/issues"
+    "url": "https://HabitJeremy@bitbucket.org/HabitJeremy/monkey-zero.git/issues"
   },
-  "homepage": "https://HabitJeremy@bitbucket.org/HabitJeremy/magicmonkeyreworked.git#readme"
+  "homepage": "https://HabitJeremy@bitbucket.org/HabitJeremy/monkey-zero.git#readme"
 }
