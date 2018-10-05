@@ -2,3 +2,4 @@
 **/.*
 config.rb
 dev
+.sass-cache

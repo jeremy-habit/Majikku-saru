@@ -24,4 +24,4 @@ class MagicMonkey {
 module.exports = MagicMonkey*/
 
 
-require('./stylesheets/monkey-zero.min.css')
+require('./stylesheets/majikku-saru.min.css')

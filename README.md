@@ -1,15 +1,15 @@
-# Monkey-Zero
+# Majikku Saru
 
 ## What ?
 
-Monkey-Zero is a CSS library offering practical classes and a responsive grid based on Flexbox. You can check for the documentation inside the folder documentation.
+Majikku Saru is a CSS library offering practical classes and a responsive grid based on Flexbox.
 
 ## Install with NPM or YARN
 
-Monkey-Zero can be installed thanks to [NPM](https://www.npmjs.com/) ( <https://www.npmjs.com/package/magic-monkey> ) :
+Majikku Saru can be installed thanks to npm :
 
 ```bash
-npm i magic-monkey
+npm i majikku-saru
 ```
 
 or
@@ -18,8 +18,8 @@ or
 #if yarn is not installed on your computer
 npm i -g yarn
 
-# add magic-monkey to your project
-yarn add magic-monkey
+# add majikku-saru to your project
+yarn add majikku-saru
 ```
 
 
@@ -32,7 +32,7 @@ You can import the style sheet in your javascript file :
 ### ES6
 
 ```js
-import 'monkey-zero'
+import 'majikku-saru'
 ```
 
 
@@ -40,7 +40,7 @@ import 'monkey-zero'
 ### CommonJS
 
 ```js
-require('monkey-zero')
+require('majikku-saru')
 ```
 
 

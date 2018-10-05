@@ -1,16 +1,16 @@
 {
-  "name": "monkey-zero",
+  "name": "majikku-saru",
   "version": "1.0.0",
-  "description": "Monkey-Zero is a CSS library offering practical classes and a responsive grid based on Flexbox.",
+  "description": "Majikku Saru is a CSS library offering practical classes and a responsive grid based on Flexbox.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://HabitJeremy@bitbucket.org/HabitJeremy/monkey-zero.git"
+    "url": "https://github.com/jeremy-habit/Majikku-saru"
   },
   "author": "Jérémy Habit <jeremy.habit@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://HabitJeremy@bitbucket.org/HabitJeremy/monkey-zero.git/issues"
+    "url": "https://github.com/jeremy-habit/Majikku-saru/issues"
   },
-  "homepage": "https://HabitJeremy@bitbucket.org/HabitJeremy/monkey-zero.git#readme"
+  "homepage": "https://github.com/jeremy-habit/Majikku-saru"
 }
